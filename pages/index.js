@@ -2,6 +2,7 @@ import React from "react"
 import Link from "next/link";
 import { useAuth } from "../auth";
 import Head from 'next/head';
+//
 import firebaseClient from "../firebaseClient";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -19,32 +20,32 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '} YHack
+        <h1 className="text-6xl font-bold my-4">
+          Welcome to{' '} YHack 2021
         </h1>
 
         <text textAlign="center">{`USER ID: ${user ? user.uid : "No user signed in"},
         EMAIL: ${user ? user.email : "No email"}`}</text>
 
+        <div class="flex space-x-4 my-4">
+          <button class="bg-blue-300 hover:bg-blue-500 text-white py-2 px-4 rounded">
+            <a href="/signup">
+              Sign Up
+            </a>
+          </button>
 
-        <button>
-          <a href="/signup" disabled={!user}>
-            Sign Up
-          </a>
-        </button>
-
-        <button>
-          <a href="/login" disabled={user}>
-            Login
-          </a>
-        </button>
-
-        <button onClick={async () => {
+          <button class="bg-blue-300 hover:bg-blue-500 text-white py-2 px-4 rounded">
+            <a href="/login">
+              Login
+            </a>
+          </button>
+        </div>
+        <button class="bg-blue-300 hover:bg-blue-500 text-white py-2 px-4 rounded" onClick={async () => {
           await firebase.auth().signOut();
           window.location.href = "/";
         }}
         >
-          Sign out
+          Sign Out
         </button>
 
       </main>

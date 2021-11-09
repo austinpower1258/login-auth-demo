@@ -11,15 +11,15 @@ export default function SignUp() {
     const [pass, setPass] = useState("");
 
     return (
-        <div class="w-full max-w-xs">
+        <div class="w-full max-w-sm">
             <h1 className="text-6xl font-bold py-8 px-8">Register</h1>
             <button class="px-8">
                 <a href="/">
                     ← Back to home
                 </a>
             </button>
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <div class="mb-4">
+            <form class="bg-white shadow-md rounded px-8 pt-8 pb-8 mb-6 mx-4 my-2">
+                <div class="mb-6 py-">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                         Username
                     </label>
@@ -34,13 +34,12 @@ export default function SignUp() {
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************"
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************"
                         onChange={(e) => setPass(e.target.value)}
                         type="password"
                         id="pass"
                         value={pass}
                         aria-describedby="password-helper-text"></input>
-                    <p class="text-red-500 text-xs italic">Please choose a password.</p>
                 </div>
                 <div class="flex items-center justify-between">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button"
@@ -48,6 +47,7 @@ export default function SignUp() {
                             await firebase.auth().createUserWithEmailAndPassword(email, pass).then(function () {
                                 window.location.href = "/"
                             }).catch(function (error) {
+                                alert('Account already exists with that email.')
                                 const message = error.message;
                                 console.log("error");
 

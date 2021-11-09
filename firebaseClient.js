@@ -1,9 +1,10 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { API_KEY } from '/globals.js';
 
 const FIREBASE_CONFIG = {
-    apiKey: "",
+    apiKey: API_KEY,
     authDomain: "yhack-demo-4aedb.firebaseapp.com",
     databaseURL: "https://yhack-demo-4aedb.firebaseapp.com",
     projectId: "yhack-demo-4aedb",
