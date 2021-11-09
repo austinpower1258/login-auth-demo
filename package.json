@@ -6,7 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "chakra": "0.0.3",
+    "firebase": "^9.4.0",
+    "firebase-admin": "^10.0.0",
     "next": "latest",
+    "nookies": "^2.5.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
