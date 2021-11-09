@@ -2,7 +2,6 @@ import React from "react"
 import Link from "next/link";
 import { useAuth } from "../auth";
 import Head from 'next/head';
-//
 import firebaseClient from "../firebaseClient";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
@@ -24,8 +23,8 @@ export default function Home() {
           Welcome to{' '} YHack 2021
         </h1>
 
-        <text textAlign="center">{`USER ID: ${user ? user.uid : "No user signed in"},
-        EMAIL: ${user ? user.email : "No email"}`}</text>
+        <text textAlign="center">{`ID: ${user ? user.uid : "No user signed in"},
+        EMAIL: ${user ? user.email : "N/A"}`}</text>
 
         <div class="flex space-x-4 my-4">
           <button class="bg-blue-300 hover:bg-blue-500 text-white py-2 px-4 rounded">
